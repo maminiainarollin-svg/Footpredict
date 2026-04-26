@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>FootPredict API</title></head>
+<body>
+<h1>✅ FootPredict API en ligne</h1>
+<p>Le pont vers Odds-API fonctionne.</p>
+<script>
+fetch("https://api.odds-api.io/v4/sports/soccer_epl/odds/?apiKey=fc9238850f88a6c97955afc22de3eb6022363aac2220f7c0742ede142e9c39ad&regions=eu&markets=h2h&oddsFormat=decimal")
+.then(r => r.json())
+.then(data => { document.body.innerHTML += "<pre>" + JSON.stringify(data.slice(0,3), null, 2) + "</pre>"; })
+.catch(e => { document.body.innerHTML += "<p>Erreur: " + e.message + "</p>"; });
+</script>
+</body>
+</html>
